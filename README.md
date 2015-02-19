@@ -41,7 +41,7 @@ Instantiate a new mediator, and then you can being subscribing, removing, and pu
 Example:
 
 ```lua
-Mediator = require "mediator_lua"
+local Mediator = require "mediator_lua"
 mediator = Mediator() -- instantiate a new mediator
 
 mediator:publish(channel, <data, data, ... >)
@@ -89,7 +89,7 @@ Examples:
 
 
 ```lua
-Mediator = require("mediator_lua")
+local Mediator = require("mediator_lua")
 local mediator = Mediator()
 
 -- Print data when the "message" channel is published to

@@ -1,3 +1,6 @@
+local _M = require("newmodule")(...)
+_M._VERSION = "mediator 1.1-3"
+
 local function Subscriber(fn, options)
   return {
     options = options or {},
@@ -113,11 +116,10 @@ end
 
 -- Mediator class and functions --
 
-local Mediator = setmetatable(
-{
-  Channel = Channel,
-  Subscriber = Subscriber
-},
+_M.Channel = Channel
+_M.Subscriber = Subscriber
+
+setmetatable(_M,
 {
   __call = function (fn, options)
     return {
@@ -151,4 +153,4 @@ local Mediator = setmetatable(
     }
   end
 })
-return Mediator
+return _M
